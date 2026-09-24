@@ -1,0 +1,217 @@
+Caelestia + Hyprland Backup
+============================
+
+This folder is a snapshot of the working Arch Linux desktop setup.
+
+The goal is to be able to restore the Caelestia + Hyprland environment
+if an update, experiment, configuration change, or other catastrophe
+turns the desktop into a KDE-sized crime scene.
+
+IMPORTANT
+---------
+This backup is intended to restore the desktop configuration that existed
+when the backup was created.
+
+Before restoring:
+1. Make sure you are running Arch Linux.
+2. Make sure this folder is intact.
+3. Read this file completely.
+4. Do NOT blindly restore random application configuration files.
+5. Keep this backup somewhere safe, preferably Git + another backup.
+
+
+WHAT IS INCLUDED
+----------------
+
+configs/
+    hypr/
+        Hyprland configuration and scripts.
+
+    caelestia/
+        Caelestia user configuration and customizations.
+
+    quickshell/
+        Quickshell configuration, if present in this backup.
+
+    fish/
+        Fish shell configuration.
+
+    foot/
+        Foot terminal configuration.
+
+    gtk-3.0/
+        GTK 3 customization.
+
+    gtk4.0/
+        GTK 4 customization.
+
+    qt5ct/
+        Qt5 appearance configuration, if present.
+
+    qt6ct/
+        Qt6 appearance configuration, if present.
+
+    localsharecaelestia/
+        Caelestia-related files from ~/.local/share/caelestia.
+
+    localbin/
+        User scripts/programs from ~/.local/bin.
+
+Package lists
+-------------
+
+Explisit-packages.txt
+    Explicitly installed packages captured from the original system.
+
+aur_pkgs.txt
+    Packages installed from the AUR.
+
+all_installed.txt
+    Complete package list from the original system.
+
+core.txt
+    Versions of important desktop components such as Caelestia,
+    Quickshell, Hyprland and Fish.
+
+System snapshots
+----------------
+
+snapshot.txt
+    Hyprland version information.
+
+snap_kernel.txt
+    Kernel/system information.
+
+metadata/date.txt
+    Date on which the backup was created.
+
+pacman-c.txt
+    Snapshot of /etc/pacman.conf.
+
+
+RESTORING THE SETUP
+-------------------
+
+The main restore script is:
+
+    setup.sh
+
+Make it executable if necessary:
+
+    chmod +x setup.sh
+
+Then run:
+
+    ./setup.sh
+
+
+WHAT THE RESTORE SCRIPT DOES
+----------------------------
+
+1. Creates a safety backup of the currently installed configuration.
+
+2. Installs packages from the package lists.
+
+3. Installs AUR packages using yay when yay is available.
+
+4. Restores the saved Hyprland configuration.
+
+5. Restores the saved Caelestia configuration.
+
+6. Restores Fish, Foot and GTK configuration.
+
+7. Restores saved user scripts.
+
+8. Restores pacman.conf.
+
+9. Restores executable permissions for saved scripts.
+
+10. Tells you where the pre-restore configuration backup was stored.
+
+
+AFTER RESTORATION
+-----------------
+
+Log out of Hyprland and log back in.
+
+If something looks wrong, do NOT immediately start deleting things.
+
+The restore script creates a backup of the configuration that existed
+before restoration, so the previous state can be recovered manually.
+
+
+PACKAGE NOTES
+-------------
+
+This backup records what was installed at the time of the snapshot.
+
+It does NOT guarantee that every package will still exist in the same
+repository or at the same version in the future.
+
+Arch Linux is rolling release, so package versions will naturally move
+forward.
+
+Caelestia, Quickshell and Hyprland may also change independently of this
+backup.
+
+
+GIT SAFETY
+----------
+
+Before uploading this folder to Git, inspect the files for secrets.
+
+Pay particular attention to:
+
+    fish_variables
+    API keys
+    tokens
+    passwords
+    private SSH/GPG material
+    application credentials
+    personal identifiers
+
+Do not commit secrets to a public repository.
+
+This backup is primarily intended for configuration and reproducibility,
+not for storing private credentials.
+
+
+ANIMATED WALLPAPER
+------------------
+
+The animated-wallpaper patch is intentionally NOT part of this backup.
+
+It can be reinstalled separately if needed.
+
+
+CURRENT SETUP
+-------------
+
+This snapshot represents the working desktop configuration at the time
+the backup was created.
+
+The backup is intended to provide a known-good starting point before
+experimenting with things such as:
+
+    - Quickshell modifications
+    - Dynamic Island / Dynamic Eyelid UI
+    - Caelestia customization
+    - Hyprland configuration changes
+    - Gemini/AI integration
+    - Voice assistant integration
+
+
+THE GOLDEN RULE
+---------------
+
+If an experiment goes horribly wrong:
+
+    STOP.
+    DO NOT PANIC.
+    RUN THE RESTORE SCRIPT.
+
+Then log back into Hyprland and continue from the known-good state.
+
+This folder is the parachute.
+The Dynamic Island project is the aircraft.
+Please install the parachute before modifying the aircraft.

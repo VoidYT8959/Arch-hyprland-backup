@@ -1,0 +1,42 @@
+{
+    "appearance": {
+        "transparency": {
+            "enabled": true
+        }
+    },
+    "background": {
+        "wallpaperEnabled": true
+    },
+    "bar": {
+        "persistent": false,
+        "showOnHover": true,
+        "workspaces": {
+            "activeTrail": false,
+            "occupiedBg": false,
+            "showWindows": true
+        }
+    },
+    "dashboard": {
+        "showOnHover": true
+    },
+    "general": {
+        "apps": {
+            "explorer": [
+                "dolphin"
+            ]
+        }
+    },
+    "launcher": {
+        "showOnHover": true
+    },
+    "services": {
+        "gpuType": "NVIDIA",
+        "sensorUnits": "Celsius",
+        "useFahrenheit": false,
+        "weatherLocation": "23.11892,83.19537",
+        "weatherUnits": "Celsius"
+    },
+    "sidebar": {
+        "enabled": true
+    }
+}
