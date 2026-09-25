@@ -17,6 +17,7 @@
         }
     },
     "dashboard": {
+        "enabled": true,
         "showOnHover": true
     },
     "general": {

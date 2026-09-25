@@ -207,7 +207,7 @@ create_tag(todo_app_tag, { workspace = "special:todo" })
 -------------------------
 
 hl.workspace_rule({ workspace = "w[tv1]s[false]", gaps_out = vars.singleWindowGapsOut })
-hl.workspace_rule({ workspace = "f[1]s[false]", gaps_out = vars.singleWindowGapsOut })
+hl.workspace_rule({ workspace = "f[1]s[false]", gaps_out = vars.singleWindowGapsOut, float_gaps = 0,})
 
 
 ---------------------
